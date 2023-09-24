@@ -1,7 +1,5 @@
-# import pyttsx3
 import subprocess
 import speech_recognition as sr
-from os import path
 
 
 def record_audio():
@@ -14,8 +12,8 @@ def record_audio():
     return audio
 
 
-def transcribe(fs=44100):
-    AUDIO_FILE = path.join(path.dirname(path.realpath(__file__)), "../myrecording.wav")
+def transcribe(audio_file_name, fs=44100):
+    AUDIO_FILE = audio_file_name
     r = sr.Recognizer()
     with sr.AudioFile(AUDIO_FILE) as source:
         audio = r.record(source)  # read the entire audio file

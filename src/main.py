@@ -7,15 +7,16 @@ import time
 
 def main():
     print("Initializing...")
+    audio_file_name = "myrecording.wav"
     start_time = time.time()
     elapsed_time = time.time() - start_time
     print(f"Elapsed Time: {elapsed_time:.4f} seconds")
     while True:
         print("Listening for user input...")
-        record_audio()
+        audio_data = record_audio(audio_file_name)
         print("Voice detected. Transcribing...")
         start_time = time.time()
-        text = transcribe()
+        text = transcribe(audio_file_name)
         elapsed_time = time.time() - start_time
         print(f"Elapsed Time: {elapsed_time:.4f} seconds")
         print(f"Transcribed text: {text}")

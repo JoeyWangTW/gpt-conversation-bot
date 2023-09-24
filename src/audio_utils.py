@@ -4,7 +4,12 @@ import numpy as np
 
 
 def record_audio(
-    fs=44100, silence_threshold=5, chunk_duration=0.5, max_duration=15, buffer_length=5
+    audio_file_name,
+    fs=44100,
+    silence_threshold=5,
+    chunk_duration=0.5,
+    max_duration=15,
+    buffer_length=5,
 ):
     chunk_size = int(fs * chunk_duration)  # number of audio frames per chunk
     max_chunks = int(
@@ -37,8 +42,7 @@ def record_audio(
                 if silence_counter >= buffer_length:
                     break
 
-    filename = "myrecording.wav"
-    sf.write(filename, audio_data, fs)
+    sf.write(audio_file_name, audio_data, fs)
     print("Recording complete.")
     return
 
