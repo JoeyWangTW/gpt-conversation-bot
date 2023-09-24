@@ -1,2 +1,7 @@
+from langchain.llms import OpenAI
+
 def generate_response(text):
-    return "Here is a dummy response, we will figure this out later."
+
+    llm = OpenAI()
+    response = llm.predict(text)
+    return response
