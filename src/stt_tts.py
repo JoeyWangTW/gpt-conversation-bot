@@ -35,6 +35,4 @@ def get_tts_engine(rate):
 
 def synthesize(text, lang="en"):
     subprocess.run(["say", text])
-    # engine.say(text)
-    # engine.runAndWait()
     return
