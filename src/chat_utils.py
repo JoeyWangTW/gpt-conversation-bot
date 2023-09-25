@@ -8,12 +8,10 @@ from langchain.prompts import (
     MessagesPlaceholder,
 )
 
-system_prompt = """You are a personal assistan that's having a verbal conversation with a human.
-Add a little bit of filling words so it sounds like a natural converrsation.
-Your reply should be less then three sentences."""
 
-
-def get_llm_chain():
+def get_llm_chain(system_prompt_file):
+    with open(system_prompt_file, "r") as file:
+        system_prompt = file.read()
     prompt = ChatPromptTemplate.from_messages(
         [
             SystemMessage(content=system_prompt),  # The persistent system prompt

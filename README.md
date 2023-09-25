@@ -85,6 +85,8 @@ sh run.sh
 3. The assistant will process your request and respond audibly.
 4. `Ctrl + c` to quit
 
+If you want to enter your own system prompt, edit `system_prompt.txt`
+
 ### Experiment with LangChain and Prompts
 
 Very useful short coures [DeepLearning.ai + LangChain](https://www.deeplearning.ai/short-courses/langchain-for-llm-application-development/)
